@@ -1,7 +1,7 @@
 export class HomePage {
   constructor() {
     this.profileButton = "#user_dropdown > .dropdown-toggle";
-    this.logoutButton = "cy.get('#logout > a')";
+    this.logoutButton = "#logout > a";
   }
 
   clickProfile() {
