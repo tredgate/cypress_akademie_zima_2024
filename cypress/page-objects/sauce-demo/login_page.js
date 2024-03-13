@@ -1,3 +1,5 @@
+import { HomePage } from "./home_page";
+
 export class LoginPage {
   constructor() {
     this.sauceDemoUrl = "https://www.saucedemo.com/";
@@ -23,6 +25,6 @@ export class LoginPage {
 
   clickLogin() {
     cy.get(this.loginButton).click();
-    // TODO: add return statement
+    return new HomePage();
   }
 }
