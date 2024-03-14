@@ -1,17 +1,15 @@
 import { HomePage } from "./home_page";
-import { LostPasswordPage } from "./lost_password_page";
 
 export class LoginPage {
   constructor() {
-    this.pmtoolUrl = "https://tredgate.com/pmtool";
-    this.usernameInput = "#username";
+    this.sauceDemoUrl = "https://www.saucedemo.com/";
+    this.usernameInput = "#user-name";
     this.passwordInput = "#password";
-    this.loginButton = ".btn";
-    this.forgottenPasswordButton = "#forget_password";
+    this.loginButton = "#login-button";
   }
 
-  openPmtool() {
-    cy.visit(this.pmtoolUrl);
+  openSauceDemo() {
+    cy.visit(this.sauceDemoUrl);
     return this;
   }
 
@@ -28,10 +26,5 @@ export class LoginPage {
   clickLogin() {
     cy.get(this.loginButton).click();
     return new HomePage();
-  }
-
-  clickLostPassword() {
-    cy.get(this.forgottenPasswordButton).click();
-    return new LostPasswordPage();
   }
 }
