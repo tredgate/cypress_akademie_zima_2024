@@ -8,6 +8,58 @@ export class LoginPage {
     this.passwordInput = "#password";
     this.loginButton = ".btn";
     this.forgottenPasswordButton = "#forget_password";
+    this.pageHeader = "h3.form-title";
+    this.logoImg = ".login-page-logo img";
+    this.rememberMeCheckbox = ".checkbox";
+    this.alertDiv = "div.alert";
+  }
+
+  alertNotExist() {
+    cy.get(this.alertDiv).should("not.exist");
+    return this;
+  }
+
+  usernameHavePlacelhoder(placeholderValue) {
+    cy.get(this.usernameInput).should(
+      "have.attr",
+      "placeholder",
+      placeholderValue
+    );
+    return this;
+  }
+
+  rememberMeHaveText(text) {
+    cy.get(this.rememberMeCheckbox).should("contain.text", text);
+    return this;
+  }
+
+  loginButtonHaveText(text) {
+    cy.get(this.loginButton).should("have.text", text);
+    return this;
+  }
+
+  passwordForgottenHaveText(text) {
+    cy.get(this.forgottenPasswordButton).should("have.text", text);
+    return this;
+  }
+
+  logoIsVisible() {
+    cy.get(this.logoImg).should("be.visible");
+    return this;
+  }
+
+  passwordHavePlacelhoder(placeholderValue) {
+    cy.get(this.passwordInput).should(
+      "have.attr",
+      "placeholder",
+      placeholderValue
+    );
+    return this;
+  }
+
+  pageHeaderHaveText(headerText) {
+    cy.get(this.pageHeader).should("have.text", headerText);
+    return this;
   }
 
   openPmtool() {
