@@ -3,8 +3,12 @@ import { CreateNewTaskModal } from "./create_new_task_modal";
 import { ProjectInfoPage } from "./project_info_page";
 
 export class ProjectsTasksPage extends HeaderSection {
-  constructor() {
-    super();
+  /**
+   *
+   * @param {projectId} projectId used for direct page opening in Atomic Tests
+   */
+  constructor(projectId = "") {
+    super(`module=items/items&path=21-${projectId}/22`);
     this.addTaskButton = '[test_id="Add Task"]';
     this.projectInfoMenu = "div.navbar-header a.navbar-brand";
   }

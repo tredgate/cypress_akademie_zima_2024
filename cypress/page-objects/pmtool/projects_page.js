@@ -3,9 +3,9 @@ import { CreateNewProjectModal } from "./create_new_project_modal";
 
 export class ProjectsPage extends HeaderSection {
   constructor() {
-    super();
+    super("module=items/items&path=21");
     this.pageTitle = "h3.page-title";
-    cy.get(this.pageTitle).should("contain.text", "Projects");
+    // cy.get(this.pageTitle).should("contain.text", "Projects");
     this.AddProjectButton = '[test_id="Add Project"]';
   }
 
