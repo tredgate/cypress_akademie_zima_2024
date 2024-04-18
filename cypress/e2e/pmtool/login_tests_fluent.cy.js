@@ -5,7 +5,7 @@ describe("Fluent Login tests", () => {
     new LoginPage().openPmtool();
   });
 
-  it("Login to pmtool using Fluent API test", () => {
+  it.only("Login to pmtool using Fluent API test", () => {
     const username = Cypress.env("pmtool_username");
     const password = Cypress.env("pmtool_password");
 
