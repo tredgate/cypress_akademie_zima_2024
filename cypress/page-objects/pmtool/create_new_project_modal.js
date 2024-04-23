@@ -1,3 +1,4 @@
+import { customElement } from "../../helpers/custom_elements";
 import { ProjectsTasksPage } from "./projects/projects_tasks_page";
 
 export class CreateNewProjectModal {
@@ -9,6 +10,16 @@ export class CreateNewProjectModal {
       '//div[@data-testid="Attachments"]//input[contains(@id, "uploadifive_attachments_upload")]';
     this.startDateInput = 'div[data-testid="Start Date"] input';
     this.saveButton = 'button[type="submit"]';
+    this.descriptionIFrame = customElement("#cke_1_contents iframe");
+  }
+
+  typeDescription(descriptionText) {
+    this.descriptionIFrame.get().then((iframe) => {
+      const body = iframe.contents().find("body");
+      cy.wrap(body).as("iframe");
+    });
+    cy.get("@iframe").type(descriptionText);
+    return this;
   }
 
   selectPriority(priority) {
